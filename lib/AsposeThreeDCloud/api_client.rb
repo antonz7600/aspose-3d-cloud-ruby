@@ -18,7 +18,7 @@ require 'faraday'
 require_relative 'version'
 require_relative 'api_error'
 require 'uri'
-require 'ftools'
+#require 'ftools'
 
 module AsposeThreeDCloud
   class ApiClient

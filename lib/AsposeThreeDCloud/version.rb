@@ -11,5 +11,5 @@ Swagger Codegen version: 2.4.11-SNAPSHOT
 =end
 
 module AsposeThreeDCloud
-  VERSION = "18.10"
+  VERSION = "20.04"
 end
