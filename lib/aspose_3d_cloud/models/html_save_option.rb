@@ -13,28 +13,88 @@ Swagger Codegen version: 2.4.11-SNAPSHOT
 require 'date'
 
 module AsposeThreeDCloud
-  # The error details
-  class ErrorDetails
-    # The request id
-    attr_accessor :request_id
 
-    # Date
-    attr_accessor :date
+  class HTMLSaveOption
+    # Gets or sets  of the SaveFormat.
+    attr_accessor :save_format
+
+    # Some files like OBJ depends on external file, the lookup paths will allows Aspose.3D to look for external file to load
+    attr_accessor :lookup_paths
+
+    # The file name of the exporting/importing scene. This is optional, but useful when serialize external assets like OBJ's material.
+    attr_accessor :file_name
+
+    # The file format like FBX,U3D,PDF ....
+    attr_accessor :file_format
+
+    #  Display a grid in the scene. Default value is true.
+    attr_accessor :show_grid
+
+    #  Display rulers of x/y/z axises in the scene to measure the model. Default value is false
+    attr_accessor :show_rulers
+
+    # Display a simple UI in the scene. Default value is true
+    attr_accessor :show_ui
+
+    # Display a orientation box. Default value is true.
+    attr_accessor :orientation_box
+
+    # Gets or sets the up vector, value can be \"x\"/\"y\"/\"z\", default value is \"y\".
+    attr_accessor :up_vector
+
+    # Gets or sets the far plane of the camera, default value is 1000
+    attr_accessor :far_plane
+
+    # Gets or sets the near plane of the camera, default value is 1
+    attr_accessor :near_plane
+
+    # Gets or sets the default look at position, default value is (0, 0, 0)
+    attr_accessor :look_at
+
+    # Gets or sets the initial position of the camera, default value is (10, 10, 10)
+    attr_accessor :camera_position
+
+    #  Gets or sets the field of the view, default value is 45, measured in degree
+    attr_accessor :field_of_view
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'request_id' => :'RequestId',
-        :'date' => :'Date'
+        :'save_format' => :'SaveFormat',
+        :'lookup_paths' => :'LookupPaths',
+        :'file_name' => :'FileName',
+        :'file_format' => :'FileFormat',
+        :'show_grid' => :'ShowGrid',
+        :'show_rulers' => :'ShowRulers',
+        :'show_ui' => :'ShowUI',
+        :'orientation_box' => :'OrientationBox',
+        :'up_vector' => :'UpVector',
+        :'far_plane' => :'FarPlane',
+        :'near_plane' => :'NearPlane',
+        :'look_at' => :'LookAt',
+        :'camera_position' => :'CameraPosition',
+        :'field_of_view' => :'FieldOfView'
       }
     end
 
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'request_id' => :'String',
-        :'date' => :'DateTime'
+        :'save_format' => :'SaveFormat',
+        :'lookup_paths' => :'Array<String>',
+        :'file_name' => :'String',
+        :'file_format' => :'String',
+        :'show_grid' => :'BOOLEAN',
+        :'show_rulers' => :'BOOLEAN',
+        :'show_ui' => :'BOOLEAN',
+        :'orientation_box' => :'BOOLEAN',
+        :'up_vector' => :'String',
+        :'far_plane' => :'Float',
+        :'near_plane' => :'Float',
+        :'look_at' => :'Vector3',
+        :'camera_position' => :'Vector3',
+        :'field_of_view' => :'Float'
       }
     end
 
@@ -46,12 +106,62 @@ module AsposeThreeDCloud
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'RequestId')
-        self.request_id = attributes[:'RequestId']
+      if attributes.has_key?(:'SaveFormat')
+        self.save_format = attributes[:'SaveFormat']
       end
 
-      if attributes.has_key?(:'Date')
-        self.date = attributes[:'Date']
+      if attributes.has_key?(:'LookupPaths')
+        if (value = attributes[:'LookupPaths']).is_a?(Array)
+          self.lookup_paths = value
+        end
+      end
+
+      if attributes.has_key?(:'FileName')
+        self.file_name = attributes[:'FileName']
+      end
+
+      if attributes.has_key?(:'FileFormat')
+        self.file_format = attributes[:'FileFormat']
+      end
+
+      if attributes.has_key?(:'ShowGrid')
+        self.show_grid = attributes[:'ShowGrid']
+      end
+
+      if attributes.has_key?(:'ShowRulers')
+        self.show_rulers = attributes[:'ShowRulers']
+      end
+
+      if attributes.has_key?(:'ShowUI')
+        self.show_ui = attributes[:'ShowUI']
+      end
+
+      if attributes.has_key?(:'OrientationBox')
+        self.orientation_box = attributes[:'OrientationBox']
+      end
+
+      if attributes.has_key?(:'UpVector')
+        self.up_vector = attributes[:'UpVector']
+      end
+
+      if attributes.has_key?(:'FarPlane')
+        self.far_plane = attributes[:'FarPlane']
+      end
+
+      if attributes.has_key?(:'NearPlane')
+        self.near_plane = attributes[:'NearPlane']
+      end
+
+      if attributes.has_key?(:'LookAt')
+        self.look_at = attributes[:'LookAt']
+      end
+
+      if attributes.has_key?(:'CameraPosition')
+        self.camera_position = attributes[:'CameraPosition']
+      end
+
+      if attributes.has_key?(:'FieldOfView')
+        self.field_of_view = attributes[:'FieldOfView']
       end
 
     end
@@ -60,17 +170,12 @@ module AsposeThreeDCloud
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @date.nil?
-        invalid_properties.push("invalid value for 'date', date cannot be nil.")
-      end
-
       return invalid_properties
     end
 
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @date.nil?
       return true
     end
 
@@ -79,8 +184,20 @@ module AsposeThreeDCloud
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          request_id == o.request_id &&
-          date == o.date
+          save_format == o.save_format &&
+          lookup_paths == o.lookup_paths &&
+          file_name == o.file_name &&
+          file_format == o.file_format &&
+          show_grid == o.show_grid &&
+          show_rulers == o.show_rulers &&
+          show_ui == o.show_ui &&
+          orientation_box == o.orientation_box &&
+          up_vector == o.up_vector &&
+          far_plane == o.far_plane &&
+          near_plane == o.near_plane &&
+          look_at == o.look_at &&
+          camera_position == o.camera_position &&
+          field_of_view == o.field_of_view
     end
 
     # @see the `==` method
@@ -92,7 +209,7 @@ module AsposeThreeDCloud
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [request_id, date].hash
+      [save_format, lookup_paths, file_name, file_format, show_grid, show_rulers, show_ui, orientation_box, up_vector, far_plane, near_plane, look_at, camera_position, field_of_view].hash
     end
 
     # Builds the object from hash

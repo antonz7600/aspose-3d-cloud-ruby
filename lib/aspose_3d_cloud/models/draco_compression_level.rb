@@ -18,7 +18,7 @@ module AsposeThreeDCloud
 
     Fast =1,
 
-		Standard = 2,
+    Standard = 2,
 
     Optimal = 3
 

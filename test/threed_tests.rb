@@ -1,6 +1,6 @@
 =begin
 --------------------------------------------------------------------------------------------------------------------
-  Copyright (c) 2020 Aspose.ThreeD Cloud
+  Copyright (c) 2020 Aspose.3D Cloud
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -23,7 +23,7 @@ require 'minitest/autorun'
 require 'minitest/unit'
 require 'base64'
 
-require_relative '../lib/AsposeThreeDCloud'
+require_relative '../lib/aspose_3d_cloud'
 
 class ThreeDTests < Minitest::Test
   include MiniTest::Assertions
@@ -32,7 +32,7 @@ class ThreeDTests < Minitest::Test
 
   def setup
     # Get App key and App SID from https://aspose.cloud
-    @threed_api = ThreeDCloudApi.new('131742276bec11f6b699268401e3c4ce', 'threed.cloud')
+    @threed_api = ThreeDCloudApi.new('****your AppKey****', '****your AppID****')
     @temp_folder = '3DTest'
     @test_data_folder = '../test_data/'
     config = @threed_api.api_client.config
