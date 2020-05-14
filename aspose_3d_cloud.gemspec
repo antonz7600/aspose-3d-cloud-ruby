@@ -19,10 +19,10 @@ Gem::Specification.new do |s|
   s.name        = "aspose_3d_cloud"
   s.version     = AsposeThreeDCloud::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = asposecloud
-  s.email       = 'aspose.cloud@asposeptyltd.com'
+  s.authors     = ["AsposeCloud"]
+  s.email       = ["aspose.cloud@asposeptyltd.com"]
   s.homepage    = 'https://github.com/Aspose-3D-Cloud/aspose-3d-cloud-ruby'
-  s.summary     = "Ruby library for communicating with the Aspose.3D Cloud API"
+  s.summary     = "Aspose.3D Cloud API"
   s.description = "This SDK allows you to work with Aspose.3D Cloud REST APIs in your Ruby applications quickly and easily, with zero initial cost"
   # TODO uncommnet and update below with a proper license 
   #s.license     = "MIT"
