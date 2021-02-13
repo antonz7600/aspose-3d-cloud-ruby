@@ -39,6 +39,19 @@ HTML
 
 Register an account at [Aspose Cloud Dashboard](https://dashboard.aspose.cloud/#/apps) to get you application information. Next, add the GEM to your project as `gem install aspose_3d_cloud`.
 
+## FBX to PDF in Ruby
+
+```ruby
+    # Get your ClientId and ClientSecret from https://dashboard.aspose.cloud (free registration required).
+
+    @three_d_cloud_api = AsposeThreeDCloud::ThreeDCloudApi.new("MY_CLIENT_SECRET", MY_CLIENT_ID")
+	@name:String = "sample.fbx"
+	@newformat:String = "pdf"
+	@newfilename:String = "oaptest.pdf"
+
+    result = @three_d_cloud_api.post_convert_by_format(@name, @newformat, @newfilename)
+```
+
 ## Aspose.3D Cloud SDKs in Popular Languages
 
 | .NET | Java | PHP | Python | Ruby | Node.js | Swift | Perl | GO |
